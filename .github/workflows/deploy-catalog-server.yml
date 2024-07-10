@@ -22,7 +22,7 @@ jobs:
         run: npm install -g pnpm
 
       - name: Run Build Command
-        run: pnpm node scripts/build.js && mkdir -p public && touch public/index.html
+        run: pnpm node package/catelog-server/scripts/build.js && mkdir -p public && touch public/index.html
 
       - name: List Generated Files
         run: ls -R
