@@ -21,11 +21,11 @@ jobs:
       - name: Display Node.js Version
         run: node --version
 
-      - name: Display pnpm Version
-        run: pnpm --version
-
       - name: Install Dependencies
         run: pnpm install
+
+      - name: Display pnpm Version
+        run: pnpm --version
 
       - name: Run Build Command
         run: pnpm node scripts/build.js && mkdir -p public && touch public/index.html
