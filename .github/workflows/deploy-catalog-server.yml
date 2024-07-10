@@ -18,17 +18,8 @@ jobs:
       - name: Display Vercel CLI Version
         run: vercel --version
 
-      - name: Display Node.js Version
-        run: node --version
-
-      - name: Install Dependencies
-        run: pnpm install
-
-      - name: Display pnpm Version
-        run: pnpm --version
-
       - name: Run Build Command
-        run: pnpm node scripts/build.js && mkdir -p public && touch public/index.html
+        run: yarn node scripts/build.js && mkdir -p public && touch public/index.html
 
       - name: List Generated Files
         run: ls -R
