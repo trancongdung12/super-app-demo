@@ -52,4 +52,5 @@ jobs:
           artifacts: "build/**/*.bundle,build/**/*.map"
           artifactErrorsFailBuild: true
           skipIfReleaseExists: true
-          name: ${{ github.ref
+          name: ${{ github.ref_name }}
+          tag: ${{ github.ref }}
