@@ -9,7 +9,7 @@ const BookingScreen = () => {
   return (
     <ErrorBoundary name="BookingScreen">
       <React.Suspense
-        fallback={<Placeholder label="Booking" icon="calendar" />}>
+        fallback={<Placeholder label="Booking with Smartos" icon="calendar" />}>
         <Booking />
       </React.Suspense>
     </ErrorBoundary>
