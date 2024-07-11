@@ -46,7 +46,7 @@ function createAppJSON(matrix) {
 }
 
 const data = fs.readFileSync(
-  path.join(__dirname, '..', '..', '..', 'compatibility-matrix.json'),
+  path.join(__dirname, 'compatibility-matrix.json'),
   'utf8',
 );
 
