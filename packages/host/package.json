@@ -60,22 +60,22 @@
     {
       "name": "auth",
       "type": "internal",
-      "url": "https://github.com/callstack/super-app-showcase"
+      "url": "https://github.com/trancongdung12/super-app-demo"
     },
     {
       "name": "booking",
       "type": "internal",
-      "url": "https://github.com/callstack/super-app-showcase"
+      "url": "https://github.com/trancongdung12/super-app-demo"
     },
     {
       "name": "dashboard",
       "type": "internal",
-      "url": "https://github.com/callstack/super-app-showcase"
+      "url": "https://github.com/trancongdung12/super-app-demo"
     },
     {
       "name": "shopping",
       "type": "internal",
-      "url": "https://github.com/callstack/super-app-showcase"
+      "url": "https://github.com/trancongdung12/super-app-demo"
     },
     {
       "name": "news",
