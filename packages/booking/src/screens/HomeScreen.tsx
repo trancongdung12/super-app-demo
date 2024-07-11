@@ -61,7 +61,7 @@ const HomeScreen = ({navigation}: Props) => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text variant="titleLarge" style={styles.headerTitle}>
-          Featured Services
+          Featured Services with Dung Tran MO
         </Text>
         <Button
           mode="contained-tonal"

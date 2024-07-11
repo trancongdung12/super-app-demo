@@ -9,7 +9,7 @@ const SignInScreen = () => {
   return (
     <View style={styles.container}>
       <Text variant="headlineMedium" style={styles.welcomeHeadline}>
-        Welcome Dung Tran!
+        Welcome Dung Tran MO!
       </Text>
       <Text style={styles.welcomeText} variant="bodyLarge">
         This is a dummy login screen. Just press the button and have a look
