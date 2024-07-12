@@ -2,18 +2,18 @@
     <string name="app_name">Super App Showcase</string>
     <string name="RepackPublicKey">
 -----BEGIN PUBLIC KEY-----
-MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvR2JseYMjDTie9MYo/Tw
-4xGQKSBKJ15GcrwcP+eX96WWCkbTH+Oa7oUwuM2l6KyTBZsuWiTbajldnUslyfLu
-uLmAfOjmgVMgWqihRIkvBIzxG2G/wrUGMLOrXWn01enqHORami0N9O7/WayC3UO1
-KwN7c+Rmhkk7pwxQUDcsLofkPAjCAbo5SRDv04y0jjvjyXnufepVamSBcVdclEui
-d6nrDR9vWMhvNrSW6op4/NaJM0tMqvyzwNM5p081GkqSrkS59vPkkwaFOEf2/Awg
-yNsK+Efo4WDPEcZjay6S/wwhD1vw/29w/Or5KXfusIHsJu1iMC7xi5sYb9Z+pUZH
-zLqv9xPF0Q040NBOSgY1dpuPm1WE3/Yd1zG1vfWFCQJ606+DVFjVODj/uTlKldxY
-+vTvrfL5mZohGiYMvO4h4DLXKDlsuI0MAbCYEO9wvm/vGEP3HTpb/O85VarT4CU/
-wsPsZn01/gGJmqS+2v/0428SHra0r1JOXhgOrJDn/SpWkfhcYPti61gq9qKmjylq
-549qj7P7TNS0hdk8gaItciTkN6oNdvLUi3xHWjFauq2nvGq7DrNGis9agb91h6qp
-cY5Xs2ruzayYogugDiaALCPvJpQFCj83AIbWft26fl7VCphxPKaFpeDHseVi6tMi
-1+opwSqunAaqo5rsLlHIw0MCAwEAAQ==
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt3SJ3I4Z91UDNaKqc6tO
+YgN65lVogWVFAvsNlS7/h3MKO2xYvbYuYobiOa/d5+3mZ8luRthlz1WbxCIDdX3v
+y6lIu3bwoDW5FrvEvQ1c0UC9LQ+z5N4HSnjgOvoJtxdh6XJjch9r23CIdmJ9Qnce
+KYtqRRxlaLBf+/pZQXdScnR209ANbc7YzCt7HoeyoKc80MDoEapRv/j8ZJpN/8cx
+IKl1MvoHHTZSu4m7Vir15siRwb7CWKyl9eqz/2CVTH8X/geB0ql27UBDfueeEpog
+MjSz+7SgSp9bjyu9nEgvvtahCGY0FnFdJqGyK+bJKfM3oM1rld0pmGWfArL7qrtd
+LKAhlUlDZEoA7Z8o+Juj1RdzbjFL5agMZedfaRcVa+fygjN5TvvXqahHPbf5OoQ+
+PvAioqkClps9tk/rZD88yBirfN5h2eeJwxsKpC2N1g+ljKNCLMiC6LG9WdaCTjwr
+OVE9a4DI1H91opTh8vVjeQru/XdMYetqzHCVQNGETDw+uB1KGTb2IKGy9jcNnhPa
+YhOFwZIiBlPzhGP3fZorXVeHY8tFlwUD7HpHG5n9dY1YkNlPJ/WslW28OgmHbAS5
+DD0HtXrLjCS+MHBge75br4Die5D1VeoqN+InRtZ0Jy+YpoDRx8jYSXFlkwhAq6S+
+IUsntIP5bH/YJCUpkCRbNoECAwEAAQ==
 -----END PUBLIC KEY-----
     </string>
 </resources>
