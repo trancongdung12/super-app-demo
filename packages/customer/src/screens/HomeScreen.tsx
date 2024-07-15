@@ -3,19 +3,18 @@ import {
   Alert,
   Dimensions,
   FlatList,
-  Image,
   ListRenderItem,
   ScrollView,
   StyleSheet,
   View,
 } from 'react-native';
 import {
-  Card,
   Button,
+  Card,
   Divider,
+  Paragraph,
   Text,
   Title,
-  Paragraph,
 } from 'react-native-paper';
 import products from '../data/products.json';
 
@@ -35,38 +34,14 @@ const renderProduct: ListRenderItem<any> = ({item, index}) => (
   </Card>
 );
 
-const renderSliderItem = () => {
-  return (
-    <Image
-      source={{uri: 'https://picsum.photos/600?a'}}
-      style={styles.sliderItem}
-    />
-  );
-};
-
 const renderDivider = () => <Divider style={styles.divider} />;
 
 const HomeScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <Text variant="titleLarge" style={styles.customerTitle}>
-        Customer Module V1
+        Customer Module V2
       </Text>
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={products.data}
-        renderItem={renderSliderItem}
-        pagingEnabled
-      />
-      <View style={styles.header}>
-        <Text variant="titleLarge" style={styles.headerTitle}>
-          Featured Products
-        </Text>
-        <Button mode="contained-tonal" onPress={showNotImplementedAlert}>
-          See All
-        </Button>
-      </View>
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -136,7 +111,7 @@ const styles = StyleSheet.create({
   customerTitle: {
     flex: 1,
     padding: 16,
-    fontSize: 24,
+    fontSize: 30,
   },
   cardWidth: {
     width: 270,
