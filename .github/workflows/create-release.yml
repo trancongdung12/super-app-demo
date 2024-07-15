@@ -11,6 +11,8 @@ on:
       - dashboard-ios@*.*.*
       - shopping-android@*.*.*
       - shopping-ios@*.*.*
+      - customer-android@*.*.*
+      - customer-ios@*.*.*
 
 jobs:
   build-and-deploy:
