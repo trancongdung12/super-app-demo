@@ -11,12 +11,14 @@ import {version as appVersion} from './package.json';
 
 ScriptManager.shared.addResolver(async (scriptId, caller) => {
   const containersURL = getContainersURL({
-    hostname: process.env.SAS_CATALOG_SERVER_URL,
-    // hostname: 'https://super-app-demo-ruby.vercel.app',
+    // hostname: process.env.SAS_CATALOG_SERVER_URL,
+    hostname: 'https://super-app-demo-ruby.vercel.app',
     version: appVersion,
     platform: Platform.OS,
     appName,
   });
+
+  console.log('log ---containersURL', containersURL);
 
   const containersResponse = await fetch(containersURL);
 
@@ -43,7 +45,8 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
     query: {
       platform: Platform.OS, // only needed in development
     },
-    verifyScriptSignature: __DEV__ ? 'off' : 'strict',
+    // verifyScriptSignature: __DEV__ ? 'off' : 'strict',
+    verifyScriptSignature: 'strict',
   };
 });
 

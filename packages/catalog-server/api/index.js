@@ -1,7 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 // if running on vercel, use generated .prod configs
-const env = process.env.VERCEL ? '.prod' : '.dev';
+const env = 'process.env.VERCEL' ? '.prod' : '.dev';
 const suffix = env + '.json';
 
 const host = require('../data/host' + suffix);
