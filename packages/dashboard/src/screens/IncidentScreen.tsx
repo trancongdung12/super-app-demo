@@ -1,8 +1,8 @@
 import React from 'react';
 import ScreenPlaceholder from '../components/ScreenPlaceholder';
 
-const StatisticsScreen = () => {
+const IncidentScreen = () => {
   return <ScreenPlaceholder />;
 };
 
-export default StatisticsScreen;
+export default IncidentScreen;

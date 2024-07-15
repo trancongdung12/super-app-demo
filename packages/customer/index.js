@@ -11,25 +11,21 @@ import {version as appVersion} from './package.json';
 
 ScriptManager.shared.addResolver(async (scriptId, caller) => {
   const containersURL = getContainersURL({
-    hostname: process.env.SAS_CATALOG_SERVER_URL,
-    // hostname: 'https://super-app-demo-ruby.vercel.app' -> release,
     version: appVersion,
     platform: Platform.OS,
     appName,
   });
+  const response = await fetch(containersURL);
+  console.log('🤟💋   ScriptManager.shared.addResolver   response:', response);
 
-  console.log('log ---containersURL', containersURL);
-
-  const containersResponse = await fetch(containersURL);
-
-  const containers = await containersResponse.json();
+  const containers = await response.json();
 
   const resolveURL = Federated.createURLResolver({
     containers,
   });
 
   let url;
-  if (__DEV__ && caller === 'main') {
+  if (caller === 'main') {
     url = Script.getDevServerURL(scriptId);
   } else {
     url = resolveURL(scriptId, caller);
@@ -41,12 +37,10 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
 
   return {
     url,
-    cache: !__DEV__,
+    cache: false, // For development
     query: {
-      platform: Platform.OS, // only needed in development
+      platform: Platform.OS,
     },
-    verifyScriptSignature: __DEV__ ? 'off' : 'strict',
-    // verifyScriptSignature: 'strict', ->release
   };
 });
 

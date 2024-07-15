@@ -1,15 +1,15 @@
 import React from 'react';
 import {
   Alert,
+  Dimensions,
   FlatList,
+  Image,
   ListRenderItem,
-  Platform,
   ScrollView,
   StyleSheet,
   View,
 } from 'react-native';
 import {
-  Avatar,
   Card,
   Button,
   Divider,
@@ -17,32 +17,9 @@ import {
   Title,
   Paragraph,
 } from 'react-native-paper';
-import bookings from '../data/bookings.json';
 import products from '../data/products.json';
-import news from '../data/news.json';
-import articles from '../data/articles.json';
 
 const showNotImplementedAlert = () => Alert.alert('Not implemented yet');
-
-const renderUpcoming = ({item}: any) => (
-  <Card mode="contained">
-    <Card.Title
-      titleVariant="titleMedium"
-      subtitleVariant="bodyMedium"
-      title={`${item.title} • ${item.provider}`}
-      subtitle={`${item.date} ${item.time}`}
-      left={props => <Avatar.Icon {...props} icon="calendar" />}
-    />
-    <Card.Actions>
-      <Button mode="text" onPress={showNotImplementedAlert}>
-        Cancel
-      </Button>
-      <Button mode="contained" onPress={showNotImplementedAlert}>
-        Edit
-      </Button>
-    </Card.Actions>
-  </Card>
-);
 
 const renderProduct: ListRenderItem<any> = ({item, index}) => (
   <Card mode="contained" style={styles.cardWidth}>
@@ -52,48 +29,42 @@ const renderProduct: ListRenderItem<any> = ({item, index}) => (
       <Paragraph numberOfLines={1}>{item.description}</Paragraph>
     </Card.Content>
     <Card.Actions>
-      <Button onPress={showNotImplementedAlert}>Delete</Button>
-      <Button onPress={showNotImplementedAlert}>Edit</Button>
+      <Button onPress={showNotImplementedAlert}>To Wishlist</Button>
+      <Button onPress={showNotImplementedAlert}>Buy</Button>
     </Card.Actions>
   </Card>
 );
 
-const renderArticle: ListRenderItem<any> = ({item, index}) => (
-  <Card mode="contained" style={styles.cardWidth}>
-    <Card.Cover source={{uri: `${item.image}?${index}`}} />
-    <Card.Content>
-      <Title>{item.title}</Title>
-      <Paragraph numberOfLines={3}>{item.content}</Paragraph>
-    </Card.Content>
-    <Card.Actions>
-      <Button onPress={showNotImplementedAlert}>Delete</Button>
-      <Button onPress={showNotImplementedAlert}>Edit</Button>
-    </Card.Actions>
-  </Card>
-);
+const renderSliderItem = () => {
+  return (
+    <Image
+      source={{uri: 'https://picsum.photos/600?a'}}
+      style={styles.sliderItem}
+    />
+  );
+};
 
 const renderDivider = () => <Divider style={styles.divider} />;
 
 const HomeScreen = () => {
   return (
     <ScrollView style={styles.container}>
-      <Text variant="titleLarge" style={styles.headerTitle}>
-        Welcome to long-term living
+      <Text variant="titleLarge" style={styles.customerTitle}>
+        Customer Module V1
       </Text>
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={bookings.data}
-        renderItem={renderUpcoming}
-        ItemSeparatorComponent={renderDivider}
-        contentContainerStyle={styles.contentContainer}
+        data={products.data}
+        renderItem={renderSliderItem}
+        pagingEnabled
       />
       <View style={styles.header}>
         <Text variant="titleLarge" style={styles.headerTitle}>
-          My Products
+          Featured Products
         </Text>
         <Button mode="contained-tonal" onPress={showNotImplementedAlert}>
-          Manage
+          See All
         </Button>
       </View>
       <FlatList
@@ -106,33 +77,33 @@ const HomeScreen = () => {
       />
       <View style={styles.header}>
         <Text variant="titleLarge" style={styles.headerTitle}>
-          My News
+          New Products
         </Text>
         <Button mode="contained-tonal" onPress={showNotImplementedAlert}>
-          Manage
+          See All
         </Button>
       </View>
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={news.data}
-        renderItem={renderArticle}
+        data={products.data}
+        renderItem={renderProduct}
         ItemSeparatorComponent={renderDivider}
         contentContainerStyle={styles.contentContainer}
       />
       <View style={styles.header}>
         <Text variant="titleLarge" style={styles.headerTitle}>
-          My Articles
+          You may also like
         </Text>
         <Button mode="contained-tonal" onPress={showNotImplementedAlert}>
-          Manage
+          See All
         </Button>
       </View>
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={articles.data}
-        renderItem={renderArticle}
+        data={products.data}
+        renderItem={renderProduct}
         ItemSeparatorComponent={renderDivider}
         contentContainerStyle={styles.contentContainer}
       />
@@ -140,9 +111,10 @@ const HomeScreen = () => {
   );
 };
 
+const {width: sliderItemWidth} = Dimensions.get('screen');
+
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === 'ios' ? 60 : 20,
     flex: 1,
     backgroundColor: '#fff',
   },
@@ -159,14 +131,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    fontWeight: 'bold',
-    fontSize: 28,
-    textAlign: 'center',
-    marginBottom: 24,
-    marginHorizontal: 20,
+    flex: 1,
+  },
+  customerTitle: {
+    flex: 1,
+    padding: 16,
+    fontSize: 24,
   },
   cardWidth: {
     width: 270,
+  },
+  sliderItem: {
+    width: sliderItemWidth,
+    height: (sliderItemWidth / 3) * 2,
   },
 });
 

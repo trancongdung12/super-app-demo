@@ -16,6 +16,7 @@ type Action = {
 type State = {
   isLoading: boolean;
   isSignout: boolean;
+  businessType?: string;
 };
 
 const reducer = (prevState: State, action: Action): State => {
@@ -23,13 +24,15 @@ const reducer = (prevState: State, action: Action): State => {
     case ActionTypes.RESTORE_TOKEN:
       return {
         ...prevState,
-        isSignout: action.payload,
+        isSignout: !action.payload,
         isLoading: false,
+        businessType: action?.payload,
       };
     case ActionTypes.SIGN_IN:
       return {
         ...prevState,
         isSignout: false,
+        businessType: action?.payload,
       };
     case ActionTypes.SIGN_OUT:
       return {
@@ -49,18 +52,21 @@ const AuthProvider = ({
   const [state, dispatch] = React.useReducer(reducer, {
     isLoading: false,
     isSignout: false,
+    businessType: undefined,
   });
 
   const authContext = React.useMemo(
     () => ({
-      signIn: async () => {
+      signIn: async (payload: {email: string; password: string}) => {
+        const businessType =
+          payload?.email === 'coworking@gmail.com' ? 'COWORKING' : 'LIVING';
         try {
-          await AuthService.shared.setCredentials('dummy-auth-token');
+          await AuthService.shared.setCredentials(businessType);
         } catch (e) {
           // Handle error
         }
 
-        dispatch({type: ActionTypes.SIGN_IN});
+        dispatch({type: ActionTypes.SIGN_IN, payload: businessType});
       },
       signOut: async () => {
         try {
@@ -94,7 +100,7 @@ const AuthProvider = ({
         // Handle error
       }
 
-      dispatch({type: ActionTypes.RESTORE_TOKEN, payload: !userToken});
+      dispatch({type: ActionTypes.RESTORE_TOKEN, payload: userToken});
     };
 
     restoreToken();

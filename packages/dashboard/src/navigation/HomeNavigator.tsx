@@ -15,7 +15,7 @@ const HomeNavigator = () => {
     <Home.Navigator
       screenOptions={{
         header: NavBar,
-        title: 'Dashboard',
+        headerShown: false,
       }}>
       <Home.Screen name="Home" component={HomeScreen} />
     </Home.Navigator>

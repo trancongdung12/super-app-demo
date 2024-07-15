@@ -8,6 +8,7 @@
     "start:host": "pnpm --filter host start",
     "start:booking": "pnpm --filter booking start",
     "start:shopping": "pnpm --filter shopping start",
+    "start:customer": "pnpm --filter customer start",
     "start:dashboard": "pnpm --filter dashboard start",
     "start:auth": "pnpm --filter auth start",
     "start:catalog": "pnpm --filter catalog-server start",
@@ -27,7 +28,7 @@
     "typecheck": "pnpm -r typecheck",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
-    "adbreverse": "adb reverse tcp:3000 tcp:3000 && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9000 tcp:9000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:9002 tcp:9002 && adb reverse tcp:9003 tcp:9003",
+    "adbreverse": "adb reverse tcp:3000 tcp:3000 && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9000 tcp:9000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:9002 tcp:9002 && adb reverse tcp:9003 tcp:9003 && adb reverse tcp:9004 tcp:9004",
     "align-deps": "pnpm -r align-deps",
     "check-deps": "pnpm -r check-deps"
   },

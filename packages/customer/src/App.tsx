@@ -1,5 +1,4 @@
 import React from 'react';
-import RNBootSplash from 'react-native-bootsplash';
 import {Federated} from '@callstack/repack/client';
 import {NavigationContainer} from '@react-navigation/native';
 import MainNavigator from './navigation/MainNavigator';
@@ -18,11 +17,7 @@ const App = () => {
     <ErrorBoundary name="AuthProvider">
       <React.Suspense fallback={<SplashScreen />}>
         <AuthProvider>
-          {(authData: {
-            isSignout: boolean;
-            isLoading: boolean;
-            businessType?: string;
-          }) => {
+          {(authData: {isSignout: boolean; isLoading: boolean}) => {
             if (authData.isLoading) {
               return <SplashScreen />;
             }
@@ -36,9 +31,8 @@ const App = () => {
             }
 
             return (
-              <NavigationContainer
-                onReady={() => RNBootSplash.hide({fade: true, duration: 500})}>
-                <MainNavigator businessType={authData?.businessType} />
+              <NavigationContainer>
+                <MainNavigator />
               </NavigationContainer>
             );
           }}
