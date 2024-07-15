@@ -5,6 +5,7 @@ import HomeNavigator from './HomeNavigator';
 import CalendarNavigator from './CalendarNavigator';
 import StatisticsNavigator from './StatisticsNavigator';
 import AccountNavigator from './AccountNavigator';
+import IncidentNavigator from './IncidentNavigator';
 
 export type TabsParamList = {
   HomeNavigator: undefined;
@@ -30,16 +31,24 @@ const TabsNavigator = () => {
         name="CalendarNavigator"
         component={CalendarNavigator}
         options={{
-          tabBarLabel: 'Calendar',
-          tabBarIcon: 'calendar',
+          tabBarLabel: 'Room',
+          tabBarIcon: 'door-open',
+        }}
+      />
+      <Tabs.Screen
+        name="IncidentNavigator"
+        component={IncidentNavigator}
+        options={{
+          tabBarLabel: 'Incident',
+          tabBarIcon: 'chart-box',
         }}
       />
       <Tabs.Screen
         name="StatisticsNavigator"
         component={StatisticsNavigator}
         options={{
-          tabBarLabel: 'Statistics',
-          tabBarIcon: 'chart-box',
+          tabBarLabel: 'Customer',
+          tabBarIcon: 'account-group',
         }}
       />
       <Tabs.Screen

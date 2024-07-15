@@ -18,7 +18,11 @@ const App = () => {
     <ErrorBoundary name="AuthProvider">
       <React.Suspense fallback={<SplashScreen />}>
         <AuthProvider>
-          {(authData: {isSignout: boolean; isLoading: boolean}) => {
+          {(authData: {
+            isSignout: boolean;
+            isLoading: boolean;
+            businessType?: string;
+          }) => {
             if (authData.isLoading) {
               return <SplashScreen />;
             }
@@ -34,7 +38,7 @@ const App = () => {
             return (
               <NavigationContainer
                 onReady={() => RNBootSplash.hide({fade: true, duration: 500})}>
-                <MainNavigator />
+                <MainNavigator businessType={authData?.businessType} />
               </NavigationContainer>
             );
           }}

@@ -16,17 +16,24 @@ export type MainStackParamList = {
 
 const Main = createNativeStackNavigator<MainStackParamList>();
 
-const MainNavigator = () => {
+interface Props {
+  businessType: string;
+}
+
+const MainNavigator = ({businessType}: Props) => {
   return (
     <Main.Navigator
       screenOptions={{
         headerShown: false,
       }}>
-      <Main.Screen name="Tabs" component={TabsNavigator} />
+      {businessType === 'COWORKING' ? (
+        <Main.Screen name="Tabs" component={TabsNavigator} />
+      ) : (
+        <Main.Screen name="Dashboard" component={DashboardScreen} />
+      )}
       <Main.Screen name="Booking" component={BookingScreen} />
       <Main.Screen name="Shopping" component={ShoppingScreen} />
       <Main.Screen name="News" component={NewsScreen} />
-      <Main.Screen name="Dashboard" component={DashboardScreen} />
     </Main.Navigator>
   );
 };

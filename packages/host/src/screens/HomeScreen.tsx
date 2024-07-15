@@ -1,29 +1,27 @@
+import {MaterialBottomTabScreenProps} from '@react-navigation/material-bottom-tabs';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {
   FlatList,
   ListRenderItem,
-  ScrollView,
+  Platform,
   StyleSheet,
   View,
 } from 'react-native';
-import {CompositeScreenProps} from '@react-navigation/native';
-import {MaterialBottomTabScreenProps} from '@react-navigation/material-bottom-tabs';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
-  Avatar,
-  Card,
   Button,
+  Card,
   Divider,
+  Paragraph,
   Text,
   Title,
-  Paragraph,
 } from 'react-native-paper';
-import {TabsParamList} from '../navigation/TabsNavigator';
-import {HomeStackParamList} from '../navigation/HomeNavigator';
-import upcomingBookings from '../data/upcomingBookings.json';
+import {SCREEN_WIDTH} from '../constants';
 import newProducts from '../data/newProducts.json';
-import recentNews from '../data/recentNews.json';
-import recentArticles from '../data/recentArticles.json';
+import upcomingBookings from '../data/upcomingBookings.json';
+import {HomeStackParamList} from '../navigation/HomeNavigator';
+import {TabsParamList} from '../navigation/TabsNavigator';
 
 type Props = CompositeScreenProps<
   NativeStackScreenProps<HomeStackParamList>,
@@ -31,23 +29,14 @@ type Props = CompositeScreenProps<
 >;
 
 const renderUpcoming = ({item}: any) => (
-  <Card mode="contained">
-    <Card.Title
-      titleVariant="titleMedium"
-      subtitleVariant="bodyMedium"
-      title={`${item.title} • ${item.provider}`}
-      subtitle={`${item.date} ${item.time}`}
-      left={props => <Avatar.Icon {...props} icon="calendar" />}
-    />
-    <Card.Actions>
-      <Button mode="text" onPress={() => {}}>
-        Cancel
-      </Button>
-      <Button mode="contained" onPress={() => {}}>
-        Reschedule
-      </Button>
-    </Card.Actions>
-  </Card>
+  <View
+    style={{
+      borderBottomWidth: 1,
+      height: 30,
+      marginBottom: 10,
+    }}>
+    <Text>{`Location ${item.title}`}</Text>
+  </View>
 );
 
 const renderProduct: ListRenderItem<any> = ({item, index}) => (
@@ -64,97 +53,38 @@ const renderProduct: ListRenderItem<any> = ({item, index}) => (
   </Card>
 );
 
-const renderArticle: ListRenderItem<any> = ({item, index}) => (
-  <Card mode="contained" style={styles.cardWidth}>
-    <Card.Cover source={{uri: `${item.image}?${index}`}} />
-    <Card.Content>
-      <Title>{item.title}</Title>
-      <Paragraph numberOfLines={3}>{item.content}</Paragraph>
-    </Card.Content>
-  </Card>
-);
-
 const renderDivider = () => <Divider style={styles.divider} />;
 
-const HomeScreen = ({navigation}: Props) => {
+const HomeScreen = () => {
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text variant="titleLarge" style={styles.headerTitle}>
-          Upcoming Appointments
-        </Text>
-        <Button
-          mode="contained-tonal"
-          onPress={() => navigation.navigate('Upcoming')}>
-          See All
-        </Button>
-      </View>
+    <View style={styles.container}>
+      <Text variant="titleLarge" style={styles.headerTitle}>
+        Welcome to co-working
+      </Text>
       <FlatList
+        style={{marginBottom: 20}}
         horizontal
         showsHorizontalScrollIndicator={false}
         data={upcomingBookings.data}
         renderItem={renderUpcoming}
         ItemSeparatorComponent={renderDivider}
-        contentContainerStyle={styles.contentContainer}
       />
-      <View style={styles.header}>
-        <Text variant="titleLarge" style={styles.headerTitle}>
-          New Products
-        </Text>
-        <Button mode="contained-tonal" onPress={() => {}}>
-          See All
-        </Button>
-      </View>
       <FlatList
-        horizontal
+        showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         data={newProducts.data}
         renderItem={renderProduct}
         ItemSeparatorComponent={renderDivider}
-        contentContainerStyle={styles.contentContainer}
       />
-      <View style={styles.header}>
-        <Text variant="titleLarge" style={styles.headerTitle}>
-          Recent News
-        </Text>
-        <Button mode="contained-tonal" onPress={() => {}}>
-          See All
-        </Button>
-      </View>
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={recentNews.data}
-        renderItem={renderArticle}
-        ItemSeparatorComponent={renderDivider}
-        contentContainerStyle={styles.contentContainer}
-      />
-      <View style={styles.header}>
-        <Text variant="titleLarge" style={styles.headerTitle}>
-          Recent Articles
-        </Text>
-        <Button mode="contained-tonal" onPress={() => {}}>
-          See All
-        </Button>
-      </View>
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={recentArticles.data}
-        renderItem={renderArticle}
-        ItemSeparatorComponent={renderDivider}
-        contentContainerStyle={styles.contentContainer}
-      />
-    </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: Platform.OS === 'ios' ? 60 : 20,
     flex: 1,
     backgroundColor: '#fff',
-  },
-  contentContainer: {
     paddingHorizontal: 16,
   },
   divider: {
@@ -167,10 +97,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    flex: 1,
+    fontWeight: 'bold',
+    fontSize: 28,
+    textAlign: 'center',
+    marginBottom: 24,
   },
   cardWidth: {
-    width: 270,
+    width: SCREEN_WIDTH - 32,
+    marginBottom: 16,
   },
 });
 

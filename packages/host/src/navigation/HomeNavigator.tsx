@@ -17,7 +17,13 @@ const HomeNavigator = () => {
       screenOptions={{
         header: NavBar,
       }}>
-      <Home.Screen name="Home" component={HomeScreen} />
+      <Home.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Home"
+        component={HomeScreen}
+      />
       <Home.Screen name="Upcoming" component={UpcomingScreen} />
     </Home.Navigator>
   );

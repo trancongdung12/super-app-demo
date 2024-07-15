@@ -1,23 +1,38 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Button, MD3Colors, Text} from 'react-native-paper';
+import {Button, MD3Colors, Text, TextInput} from 'react-native-paper';
 import {useAuth} from '../contexts/AuthContext';
 
 const SignInScreen = () => {
   const {signIn} = useAuth();
+  const [email, setEmail] = React.useState('coworking@gmail.com');
+  const [password, setPassword] = React.useState('123456');
 
   return (
     <View style={styles.container}>
       <Text variant="headlineMedium" style={styles.welcomeHeadline}>
-        Welcome Dung Tran MO!
+        SMARTOS PMS
       </Text>
-      <Text style={styles.welcomeText} variant="bodyLarge">
-        This is a dummy login screen. Just press the button and have a look
-        around this super app 🚀
-      </Text>
-      <Button mode="contained" onPress={signIn}>
-        Login
-      </Button>
+      <View>
+        <TextInput
+          style={{marginTop: 16}}
+          label="Email"
+          value={email}
+          onChangeText={value => setEmail(value)}
+        />
+        <TextInput
+          style={{marginTop: 16, marginBottom: 24}}
+          label="Password"
+          value={password}
+          onChangeText={value => setPassword(value)}
+          secureTextEntry
+          right={<TextInput.Icon icon="eye" />}
+        />
+
+        <Button mode="contained" onPress={() => signIn({email, password})}>
+          Login
+        </Button>
+      </View>
     </View>
   );
 };
@@ -25,16 +40,14 @@ const SignInScreen = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginHorizontal: 16,
+    marginTop: 200,
   },
   welcomeHeadline: {
     color: MD3Colors.primary20,
-  },
-  welcomeText: {
-    padding: 16,
     paddingBottom: 32,
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
 

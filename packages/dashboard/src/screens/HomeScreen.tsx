@@ -3,6 +3,7 @@ import {
   Alert,
   FlatList,
   ListRenderItem,
+  Platform,
   ScrollView,
   StyleSheet,
   View,
@@ -76,14 +77,9 @@ const renderDivider = () => <Divider style={styles.divider} />;
 const HomeScreen = () => {
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text variant="titleLarge" style={styles.headerTitle}>
-          My Appointments
-        </Text>
-        <Button mode="contained-tonal" onPress={showNotImplementedAlert}>
-          Manage
-        </Button>
-      </View>
+      <Text variant="titleLarge" style={styles.headerTitle}>
+        Welcome to long-term living
+      </Text>
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -146,6 +142,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: Platform.OS === 'ios' ? 60 : 20,
     flex: 1,
     backgroundColor: '#fff',
   },
@@ -162,7 +159,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    flex: 1,
+    fontWeight: 'bold',
+    fontSize: 28,
+    textAlign: 'center',
+    marginBottom: 24,
+    marginHorizontal: 20,
   },
   cardWidth: {
     width: 270,

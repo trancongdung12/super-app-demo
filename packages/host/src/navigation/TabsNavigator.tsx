@@ -1,13 +1,17 @@
-import React from 'react';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import HomeNavigator from './HomeNavigator';
-import ServicesNavigator from './ServicesNavigator';
+import React from 'react';
 import AccountNavigator from './AccountNavigator';
+import CalendarNavigator from './CalendarNavigator';
+import CustomerNavigator from './CustomerNavigator';
+import HomeNavigator from './HomeNavigator';
+import InboxNavigator from './InboxNavigator';
 
 export type TabsParamList = {
   HomeNavigator: undefined;
-  ServicesNavigator: undefined;
+  CalendarNavigator: undefined;
   AccountNavigator: undefined;
+  CustomerNavigator: undefined;
+  InboxNavigator: undefined;
 };
 
 const Tabs = createMaterialBottomTabNavigator<TabsParamList>();
@@ -24,19 +28,35 @@ const TabsNavigator = () => {
         }}
       />
       <Tabs.Screen
-        name="ServicesNavigator"
-        component={ServicesNavigator}
+        name="CalendarNavigator"
+        component={CalendarNavigator}
         options={{
-          title: 'Services',
-          tabBarIcon: 'apps',
+          title: 'Calendar',
+          tabBarIcon: 'calendar-month',
+        }}
+      />
+      <Tabs.Screen
+        name="InboxNavigator"
+        component={InboxNavigator}
+        options={{
+          title: 'Inbox',
+          tabBarIcon: 'message-badge',
+        }}
+      />
+      <Tabs.Screen
+        name="CustomerNavigator"
+        component={CustomerNavigator}
+        options={{
+          title: 'Customer',
+          tabBarIcon: 'account-group',
         }}
       />
       <Tabs.Screen
         name="AccountNavigator"
         component={AccountNavigator}
         options={{
-          title: 'Account',
-          tabBarIcon: 'account',
+          title: 'Setting',
+          tabBarIcon: 'cog',
         }}
       />
     </Tabs.Navigator>
