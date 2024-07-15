@@ -3,15 +3,16 @@ import React from 'react';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import HomeNavigator from './HomeNavigator';
 import CalendarNavigator from './CalendarNavigator';
-import StatisticsNavigator from './StatisticsNavigator';
+import CustomerNavigator from './CustomerNavigator';
 import AccountNavigator from './AccountNavigator';
 import IncidentNavigator from './IncidentNavigator';
 
 export type TabsParamList = {
   HomeNavigator: undefined;
   CalendarNavigator: undefined;
-  StatisticsNavigator: undefined;
+  CustomerNavigator: undefined;
   AccountNavigator: undefined;
+  IncidentNavigator: undefined;
 };
 
 const Tabs = createMaterialBottomTabNavigator<TabsParamList>();
@@ -44,8 +45,8 @@ const TabsNavigator = () => {
         }}
       />
       <Tabs.Screen
-        name="StatisticsNavigator"
-        component={StatisticsNavigator}
+        name="CustomerNavigator"
+        component={CustomerNavigator}
         options={{
           tabBarLabel: 'Customer',
           tabBarIcon: 'account-group',

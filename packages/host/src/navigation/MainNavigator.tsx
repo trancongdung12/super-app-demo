@@ -30,13 +30,10 @@ const MainNavigator = ({businessType}: Props) => {
       if (businessType) {
         const screenName = businessType === 'COWORKING' ? 'Tabs' : 'Dashboard';
         setInitialRouteName(screenName);
+        setLoading(false);
       }
-
-      setLoading(false);
     } catch (error) {
       setInitialRouteName('Login');
-      setLoading(false);
-    } finally {
       setLoading(false);
     }
   };
@@ -44,7 +41,7 @@ const MainNavigator = ({businessType}: Props) => {
   useEffect(() => {
     getInitialRouteName();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [businessType]);
 
   if (loading) {
     return (
