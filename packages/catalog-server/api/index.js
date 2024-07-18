@@ -8,6 +8,7 @@ const host = require('../data/host' + suffix);
 const booking = require('../data/booking' + suffix);
 const shopping = require('../data/shopping' + suffix);
 const dashboard = require('../data/dashboard' + suffix);
+const customer = require('../data/customer' + suffix);
 
 const app = express();
 const port = process.env.PORT ?? 3000;
@@ -38,6 +39,13 @@ app.get('/dashboard', (req, res) => {
   const appVersion = req.query.appVersion;
 
   res.send(dashboard[platform][appVersion]);
+});
+
+app.get('/customer', (req, res) => {
+  const platform = req.query.platform;
+  const appVersion = req.query.appVersion;
+
+  res.send(customer[platform][appVersion]);
 });
 
 app.listen(port, () => {

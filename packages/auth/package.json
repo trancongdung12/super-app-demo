@@ -17,6 +17,8 @@
     "@react-navigation/material-bottom-tabs": "6.2.5",
     "@react-navigation/native": "6.0.14",
     "@react-navigation/native-stack": "6.9.2",
+    "formik": "^2.4.6",
+    "living-shared-components": "^0.0.1",
     "react": "18.2.0",
     "react-native": "0.71.19",
     "react-native-paper": "5.0.0-rc.10",

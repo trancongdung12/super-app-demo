@@ -254,8 +254,8 @@ export default env => {
         shared: getSharedDependencies({eager: false}),
       }),
       new Repack.plugins.CodeSigningPlugin({
-        // enabled: mode === 'production',
-        enabled: true,
+        enabled: mode === 'production',
+        // enabled: true -> release,
         privateKeyPath: path.join('..', '..', 'code-signing.pem'),
         outputPath: path.join('build', 'outputs', platform, 'remotes'),
       }),

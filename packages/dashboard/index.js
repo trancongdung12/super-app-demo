@@ -11,10 +11,13 @@ import {version as appVersion} from './package.json';
 
 ScriptManager.shared.addResolver(async (scriptId, caller) => {
   const containersURL = getContainersURL({
+    // hostname: 'https://super-app-demo-ruby.vercel.app', //-> release,
     version: appVersion,
     platform: Platform.OS,
     appName,
   });
+
+  console.log('log ---dashboard', containersURL);
   const response = await fetch(containersURL);
 
   const containers = await response.json();
