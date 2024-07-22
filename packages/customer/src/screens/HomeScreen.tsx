@@ -17,6 +17,7 @@ import {
   Title,
 } from 'react-native-paper';
 import products from '../data/products.json';
+import {WButton} from 'smartos-living-shared-components';
 
 const showNotImplementedAlert = () => Alert.alert('Not implemented yet');
 
@@ -42,6 +43,7 @@ const HomeScreen = () => {
       <Text variant="titleLarge" style={styles.customerTitle}>
         Customer Module V2
       </Text>
+      <WButton label="Hello" />
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}

@@ -31,7 +31,10 @@ const ServicesScreen = ({navigation}: ServiceScreenProps) => {
     [navigation],
   );
 
-  const openNews = useCallback(() => navigation.navigate('News'), [navigation]);
+  const openNews = useCallback(
+    () => navigation.navigate('Living'),
+    [navigation],
+  );
 
   const openShopping = useCallback(
     () => navigation.navigate('Shopping'),
@@ -48,7 +51,7 @@ const ServicesScreen = ({navigation}: ServiceScreenProps) => {
       const lastItem = index === services.data.length - 1;
       const map = new Map([
         ['booking', openBooking],
-        ['news', openNews],
+        ['living', openNews],
         ['shopping', openShopping],
         ['dashboard', openDashboard],
       ]);

@@ -17,7 +17,6 @@ import {
   Text,
   Title,
 } from 'react-native-paper';
-import {WText, WView, WIcon} from 'smartos-living-shared-components';
 import {SCREEN_WIDTH} from '../constants';
 import newProducts from '../data/newProducts.json';
 import upcomingBookings from '../data/upcomingBookings.json';
@@ -62,11 +61,6 @@ const HomeScreen = () => {
       <Text variant="titleLarge" style={styles.headerTitle}>
         Welcome to co-working
       </Text>
-      <WView mVer={16}>
-        <WText type="bold20">FROM smartos-living-shared-components </WText>
-        <WIcon name="ic-bold-calender-tick" size={24} />
-        <WIcon name="ic-bold-call" size={24} />
-      </WView>
 
       <FlatList
         style={{marginBottom: 20}}
