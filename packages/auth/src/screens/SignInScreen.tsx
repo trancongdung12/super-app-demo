@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, MD3Colors, Text, TextInput} from 'react-native-paper';
 import {useAuth} from '../contexts/AuthContext';
+import {WButton} from 'smartos-living-shared-components';
 
 const SignInScreen = () => {
   const {signIn} = useAuth();
@@ -29,9 +30,7 @@ const SignInScreen = () => {
           right={<TextInput.Icon icon="eye" />}
         />
 
-        <Button mode="contained" onPress={() => signIn({email, password})}>
-          Login
-        </Button>
+        <WButton label="Login" onPress={() => signIn({email, password})} />
       </View>
     </View>
   );

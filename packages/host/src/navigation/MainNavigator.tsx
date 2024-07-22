@@ -2,16 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BookingScreen from '../screens/BookingScreen';
 import TabsNavigator from './TabsNavigator';
-import NewsScreen from '../screens/NewsScreen';
 import ShoppingScreen from '../screens/ShoppingScreen';
 import DashboardScreen from '../screens/DashboardScreen';
 import {ActivityIndicator, View} from 'react-native';
+import LivingScreen from '../screens/LivingScreen';
 
 export type MainStackParamList = {
   Tabs: undefined;
   Booking: undefined;
   Shopping: undefined;
-  News: undefined;
+  Living: undefined;
   Dashboard: undefined;
 };
 
@@ -61,7 +61,7 @@ const MainNavigator = ({businessType}: Props) => {
       <Main.Screen name="Dashboard" component={DashboardScreen} />
       <Main.Screen name="Booking" component={BookingScreen} />
       <Main.Screen name="Shopping" component={ShoppingScreen} />
-      <Main.Screen name="News" component={NewsScreen} />
+      <Main.Screen name="Living" component={LivingScreen} />
     </Main.Navigator>
   );
 };

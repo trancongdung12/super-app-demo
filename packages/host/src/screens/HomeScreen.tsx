@@ -61,6 +61,7 @@ const HomeScreen = () => {
       <Text variant="titleLarge" style={styles.headerTitle}>
         Welcome to co-working
       </Text>
+
       <FlatList
         style={{marginBottom: 20}}
         horizontal

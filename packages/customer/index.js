@@ -16,7 +16,6 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
     appName,
   });
   const response = await fetch(containersURL);
-  console.log('🤟💋   ScriptManager.shared.addResolver   response:', response);
 
   const containers = await response.json();
 

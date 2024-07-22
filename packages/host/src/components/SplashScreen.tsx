@@ -3,7 +3,13 @@ import {StyleSheet, SafeAreaView} from 'react-native';
 import {MD3Colors, ProgressBar, Text} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const SplashScreen = () => {
+interface Props {
+  title: string;
+}
+
+const SplashScreen = ({
+  title = 'Host application is loading. Please wait...',
+}: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <Icon
@@ -12,9 +18,7 @@ const SplashScreen = () => {
         color={MD3Colors.primary20}
         name="cloud"
       />
-      <Text style={styles.text}>
-        Host application is loading. Please wait...
-      </Text>
+      <Text style={styles.text}>{title}</Text>
       <ProgressBar
         style={styles.progress}
         indeterminate

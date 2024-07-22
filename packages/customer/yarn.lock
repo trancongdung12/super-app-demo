@@ -6748,6 +6748,11 @@ react-native-codegen@^0.71.6:
     jscodeshift "^0.14.0"
     nullthrows "^1.1.1"
 
+react-native-currency-input@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-currency-input/-/react-native-currency-input-1.1.1.tgz#d7820d959390b5bd56f6d34b102247b3124d256b"
+  integrity sha512-DLsYqXkhpbvwa1M3znaG0bfKh8jlzkf+iO8TRlAJ/t8c+3gXyKwO2YdWqsBUuX0ZHLY4IVBzDjURMEofjq3ypg==
+
 react-native-gradle-plugin@^0.71.19:
   version "0.71.19"
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.19.tgz#3379e28341fcd189bc1f4691cefc84c1a4d7d232"
@@ -6779,6 +6784,14 @@ react-native-screens@3.18.2:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-vector-icons@10.1.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-10.1.0.tgz#c98a225213700177d23492e32d1dc920b9bae8aa"
+  integrity sha512-fdQjCHIdoXmRoTZ5gvN1FmT4sGLQ2wmQiNZHKJQUYnE2tkIwjGnxNch+6Nd4lHAACvMWO7LOzBNot2u/zlOmkw==
+  dependencies:
+    prop-types "^15.7.2"
+    yargs "^16.1.1"
 
 react-native-vector-icons@9.2.0:
   version "9.2.0"
@@ -7116,6 +7129,11 @@ safe-regex2@^2.0.0:
   dependencies:
     ret "~0.2.0"
 
+sax@>=0.6.0:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/sax/-/sax-1.4.1.tgz#44cc8988377f126304d3b3fc1010c733b929ef0f"
+  integrity sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==
+
 scheduler@^0.23.0:
   version "0.23.2"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.2.tgz#414ba64a3b282892e944cf2108ecc078d115cdc3"
@@ -7345,6 +7363,15 @@ slice-ansi@^2.0.0:
     ansi-styles "^3.2.0"
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
+
+smartos-living-shared-components@0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/smartos-living-shared-components/-/smartos-living-shared-components-0.4.3.tgz#54f1206bdcdac5e92dbab807d63f80ba24d319a7"
+  integrity sha512-gxTDWfhYqz+EBPSQ+/w3Ef13nTfupIQZhc1y6YCZR7XAATSzWZoFZs4HWlP8K1gZUbasZNQ4mAqMXFjufFHoCw==
+  dependencies:
+    react-native-currency-input "1.1.1"
+    react-native-vector-icons "10.1.0"
+    xml2js "0.6.2"
 
 sonic-boom@^1.0.2:
   version "1.4.1"
@@ -8154,6 +8181,19 @@ ws@^8.7.0:
   version "8.18.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.18.0.tgz#0d7505a6eafe2b0e712d232b42279f53bc289bbc"
   integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
+
+xml2js@0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.6.2.tgz#dd0b630083aa09c161e25a4d0901e2b2a929b499"
+  integrity sha512-T4rieHaC1EXcES0Kxxj4JWgaUQHDk+qwHcYOCFHfiwKz7tOVPLq7Hjq9dM1WCMhylqMEfP7hMcOIChvotiZegA==
+  dependencies:
+    sax ">=0.6.0"
+    xmlbuilder "~11.0.0"
+
+xmlbuilder@~11.0.0:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-11.0.1.tgz#be9bae1c8a046e76b31127726347d0ad7002beb3"
+  integrity sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==
 
 xtend@~4.0.1:
   version "4.0.2"

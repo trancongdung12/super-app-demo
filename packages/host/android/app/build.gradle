@@ -51,6 +51,19 @@ react {
 
 project.ext.vectoricons = [
     iconFontsDir: "../../node_modules/react-native-vector-icons/Fonts",
+     iconFontNames: [
+        'smartos-v3.ttf',
+        'Ionicons.ttf',
+        'AntDesign.ttf',
+        'FontAwesome.ttf',
+        'MaterialCommunityIcons.ttf',
+        'PlusJakartaSans-Bold.ttf',
+        'PlusJakartaSans-SemiBold.ttf',
+        'PlusJakartaSans-Medium.ttf',
+        'PlusJakartaSans-Regular.ttf',
+        'PlusJakartaSans-Light.ttf',
+        'PlusJakartaSans-ExtraLight.ttf'
+    ] // Name of the font files you want to copy
 ]
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

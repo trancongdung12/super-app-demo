@@ -5,6 +5,7 @@ import CalendarNavigator from './CalendarNavigator';
 import CustomerNavigator from './CustomerNavigator';
 import HomeNavigator from './HomeNavigator';
 import InboxNavigator from './InboxNavigator';
+import ServicesNavigator from './ServicesNavigator';
 
 export type TabsParamList = {
   HomeNavigator: undefined;
@@ -12,6 +13,7 @@ export type TabsParamList = {
   AccountNavigator: undefined;
   CustomerNavigator: undefined;
   InboxNavigator: undefined;
+  ServicesNavigator: undefined;
 };
 
 const Tabs = createMaterialBottomTabNavigator<TabsParamList>();
@@ -28,10 +30,10 @@ const TabsNavigator = () => {
         }}
       />
       <Tabs.Screen
-        name="CalendarNavigator"
-        component={CalendarNavigator}
+        name="ServicesNavigator"
+        component={ServicesNavigator}
         options={{
-          title: 'Calendar',
+          title: 'Services',
           tabBarIcon: 'calendar-month',
         }}
       />

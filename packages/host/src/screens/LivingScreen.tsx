@@ -3,17 +3,17 @@ import React from 'react';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Placeholder from '../components/Placeholder';
 
-const News = React.lazy(() => Federated.importModule('news', './App'));
+const Living = React.lazy(() => Federated.importModule('living', './App'));
 
-const NewsScreen = () => {
+const LivingScreen = () => {
   return (
-    <ErrorBoundary name="NewsScreen">
+    <ErrorBoundary name="LivingScreen">
       <React.Suspense
-        fallback={<Placeholder label="News and Articles" icon="newspaper" />}>
-        <News />
+        fallback={<Placeholder label="Welcome to living " icon="newspaper" />}>
+        <Living />
       </React.Suspense>
     </ErrorBoundary>
   );
 };
 
-export default NewsScreen;
+export default LivingScreen;

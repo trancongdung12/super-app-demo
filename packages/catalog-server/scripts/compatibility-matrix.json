@@ -22,11 +22,40 @@
         "name": "auth",
         "type": "internal",
         "url": "https://github.com/trancongdung12/super-app-demo"
+      },
+      {
+        "name": "customer",
+        "type": "internal",
+        "url": "https://github.com/trancongdung12/super-app-demo"
       }
     ],
     "versions": {
       "0.0.1": {
         "auth": "0.0.1"
+      },
+      "0.0.2": {
+        "auth": "0.0.1",
+        "customer": "0.0.2"
+      }
+    }
+  },
+  "living": {
+    "sources": [
+      {
+        "name": "auth",
+        "type": "internal",
+        "url": "https://github.com/trancongdung12/super-app-demo"
+      },
+      {
+        "name": "customer",
+        "type": "internal",
+        "url": "https://github.com/trancongdung12/super-app-demo"
+      }
+    ],
+    "versions": {
+      "0.0.1": {
+        "auth": "0.0.1",
+        "customer": "0.0.2"
       }
     }
   },
@@ -53,22 +82,42 @@
         "url": "https://github.com/trancongdung12/super-app-demo"
       },
       {
+        "name": "customer",
+        "type": "internal",
+        "url": "https://github.com/trancongdung12/super-app-demo"
+      },
+      {
         "name": "news",
-        "type": "external",
-        "url": "https://github.com/callstack/news-mini-app-showcase"
+        "type": "internal",
+        "url": "https://github.com/trancongdung12/news-mini-app-showcase"
       }
     ],
     "versions": {
       "0.0.1": {
         "auth": "0.0.1",
         "booking": "0.0.2",
-        "dashboard": "0.0.1",
+        "dashboard": "0.0.2",
         "shopping": "0.0.1",
+        "customer": "0.0.1",
         "news": "0.0.1"
       }
     }
   },
   "shopping": {
+    "sources": [
+      {
+        "name": "auth",
+        "type": "internal",
+        "url": "https://github.com/trancongdung12/super-app-demo"
+      }
+    ],
+    "versions": {
+      "0.0.1": {
+        "auth": "0.0.1"
+      }
+    }
+  },
+  "customer": {
     "sources": [
       {
         "name": "auth",
